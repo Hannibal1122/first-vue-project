@@ -34,7 +34,7 @@
                 </q-form>
 
                 <h6 style="margin: 10px;">Tasks</h6>
-                <q-list v-for="task in sortTasks" :key="task.id">
+                <q-list v-for="task in tasks" :key="task.id">
                     <q-item tag="label" v-ripple>
                         <q-item-section avatar>
                             <q-checkbox v-model="task.isDone" @update:model-value="updateTask(task)"/>
@@ -127,7 +127,7 @@
         {
             await this.getTaskByDate();
             await this.getEventsForAll();
-        },
+        }/* ,
         computed: {
             sortTasks()
             {
@@ -135,6 +135,6 @@
                 tempTasks.sort((a, b) => Number(a.isDone) - Number(b.isDone));
                 return tempTasks;
             }
-        }
+        } */
     })
 </script>
